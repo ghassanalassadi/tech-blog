@@ -1,13 +1,13 @@
-{{#each blogposts as |blogpost|}}
+{{#each blogPosts as |blogPost|}}
 <div class="row mb-4">
     <h3>
-        <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+        <a href="/blogposts/{{blogPost.id}}">{{blogPost.title}}</a>
     </h3>
     <h6>
-        By: {{blogpost.user.name}} on {{format_date blogpost.post_date}}
+        By: {{blogPost.user.name}} on {{format_date blogPost.post_date}}
     </h6>
     <p>
-        {{blogpost.content}}
+        {{blogPost.content}}
     </p>
 </div>
 {{/each}}

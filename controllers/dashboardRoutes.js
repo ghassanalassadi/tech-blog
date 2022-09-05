@@ -8,20 +8,11 @@ router.get('/', withAuth, async (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        attributes: ['id', 'post_id', 'title'],
         include: [
             {
             model: User,
             attributes: ['name'],
             },
-            {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id'],
-            include: {
-            model: User,
-            attributes: ['username']
-            }
-            }
         ],
         });
 
@@ -47,10 +38,10 @@ router.get("/blogposts/:id", async (req, res) => {
         ],
         });
 
-        const blogPost = blogPostData.get({ plain: true });
+        const blogPosts = blogPostData.get({ plain: true });
 
         res.render("dashboard", {
-        ...blogPost,
+        ...blogPosts,
         logged_in: req.session.logged_in,
         });
     } catch (err) {

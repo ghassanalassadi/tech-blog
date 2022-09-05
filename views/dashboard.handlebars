@@ -1,10 +1,8 @@
 <div class='row'>
     <div class='col-auto'>
         <h2>Welcome, {{name}}!</h2>     
-        {{#if blogPosts.length}}
-        <div class='col-md-6 post-list'>
-            <h3>Your Blog Posts:</h3>
-
+        <div class='post-list'>
+            <h3>Your Blog Posts: </h3>
             {{#each blogPosts as |blogPost|}}
             <div class='row mb-2'>
                 <div class='col-md-8'>
@@ -16,7 +14,6 @@
             </div>
             {{/each}}
         </div>
-        {{/if}}
     </div>
 </div>
 

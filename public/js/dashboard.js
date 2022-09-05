@@ -14,7 +14,6 @@ const newFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            console.log('TEST');
             document.location.replace("/dashboard");
         } else {
             alert("Failed to create blogpost");
@@ -42,6 +41,6 @@ document
     .querySelector(".new-post-form")
     .addEventListener("submit", newFormHandler);
 
-// document
-//     .querySelector(".post-list")
-//     .addEventListener("click", delButtonHandler);
+document
+    .querySelector(".post-list")
+    .addEventListener("click", delButtonHandler);
